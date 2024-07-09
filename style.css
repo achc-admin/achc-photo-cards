@@ -1,0 +1,169 @@
+.panels {
+  display: flex;
+      justify-content: center;
+
+  flex-wrap: wrap;
+  position: relative;
+      grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.panels .panel {
+  flex-shrink: 0;
+  width: 20em;
+  height: 33.75em;
+  outline: 0.25em solid rgb(26 97 203 / 0%);
+    transition: 500ms;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.panels .panel .background:after,
+.panels .panel .text > * {
+  transition: transform 200ms, opacity 200ms;
+}
+.panels .panel .background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 100ms;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.panels .panel .background:before, .panels .panel .background:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.panels .panel .background:before {
+  opacity: 0;
+}
+.panels .panel .background:after {
+  opacity: 0.4;
+  background: linear-gradient(to bottom, #01517542 20%, #015175 70%, #04152f 100%);
+}
+.panels .panel .text {
+  cursor: default;
+  position: absolute;
+  left: 1em;
+  right: 1em;
+}
+
+.panels .panel .text.one {
+  bottom: -23.5em;
+}
+.panels .panel:hover .text.one {
+  bottom: -19.6em;
+}
+.panels .panel .text.two {
+  bottom: -21em;
+}
+.panels .panel:hover .text.two {
+  bottom: -21em;
+}
+.panels .panel .text.three {
+  bottom: -17em;
+}
+.panels .panel:hover .text.three {
+  bottom: -16em;
+}
+.panels .panel .text.four {
+  bottom: -12.6em;
+}
+.panels .panel:hover .text.four {
+  bottom: -9.5em;
+}
+.panels .panel .text.four .description {
+  margin-bottom: 70px
+}
+.panels .panel:hover .text.four .description {
+  margin-bottom: 45px;
+}
+.panels .panel .text .description {
+  font-weight: 100;
+  font-size: 1em;
+  color: #fff;
+  margin-bottom: 1.8em;
+}
+.panels .panel .text .description-title {
+  font-size: 1rem;
+  margin: 30px auto 0px;
+  color: #fff;
+}
+.panels .panel .text .title, 
+.panels .panel .text p,
+.panel .description ul {
+  font-family: "Montserrat", "roboto", sans-serif;
+  line-height:1.2
+} 
+.panels .panel .text .title {
+  font-weight: 700;
+      color: white;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.panels .panel .text p {
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 5px 0;
+}
+.panel .description ul {
+    padding-left: 10px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.panels .panel.hover .background, .panels .panel:hover .background {
+  transition: 125ms;
+  top: -0.5em;
+  left: -0.5em;
+  right: -0.5em;
+  bottom: -0.5em;
+}
+.panels .panel.hover .background:after, .panels .panel:hover .background:after {
+  opacity: 1;
+}
+.panels .panel.hover .text > *, .panels .panel:hover .text > * {
+  transform: translate3d(0, -22.5rem, 0);
+}
+.panels .panel.hover .text > *, .panels .panel:hover .text .hidden-hover > * {
+  transition: .1s ease-in-out;
+  display: none;
+}
+.panels .panel.hover .text .description, .panels .panel:hover .text .description {
+  transition-delay: 0ms;
+}
+.panels .panel.hover .text .title, .panels .panel:hover .text .title {
+  transition-delay: 60ms;
+}
+
+
+@media (max-width: 767px) {
+.panels .panel .text.one {
+    bottom: -27em;
+}
+  .panels .panel:hover .text.one {
+        bottom: -22.3em;
+}
+  .panels .panel .text.two {
+  bottom: -29.5em;
+}
+.panels .panel:hover .text.two {
+  bottom: -25em;
+}
+  .panels .panel .text.three {
+    bottom: -23em;
+}
+  .panels .panel .text.four {
+    bottom: -16.6em;
+}
+  .panels .panel:hover .text.four {
+    bottom: -8em;
+}
+}
